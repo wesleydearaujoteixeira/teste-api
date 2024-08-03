@@ -21,6 +21,12 @@ const PetRouter = require('./routes/PetRouters');
 app.use('/users', router);
 app.use('/pets', PetRouter);
 
+app.get('/tentando', (req, res) => {
+  res.send('API de Petshop');
+})
+
+
+
 mongoose.connection.once('open', () => {
     console.log('Conectado ao MongoDB');
     
