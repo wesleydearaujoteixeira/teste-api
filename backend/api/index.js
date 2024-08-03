@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const mongoose = require('../backend/db/conn');
+const mongoose = require('../db/conn');
 const app = express();
 app.use(cors());
 
@@ -15,8 +15,8 @@ app.use(express.static('public'));
 const PORT = 5000;
 // Aplication's Routers
 
-const router = require('./routes/UserRoutes');
-const PetRouter = require('./routes/PetRouters');
+const router = require('../routes/UserRoutes');
+const PetRouter = require('../routes/PetRouters');
 
 app.use('/users', router);
 app.use('/pets', PetRouter);
