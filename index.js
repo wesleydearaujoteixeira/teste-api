@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
 
-const PORT = process.env.PORT || 3000; // Use PORT do ambiente, padrão para desenvolvimento local
+const PORT = 3000; // 
 const router = require('./routes/UserRoutes');
 const PetRouter = require('./routes/PetRouters');
 
@@ -20,7 +20,6 @@ app.get('/tentando', (req, res) => {
 
 mongoose.connection.once('open', () => {
   console.log('Conectado ao MongoDB');
-
 
   app.listen(PORT, () => {
     console.log(`Servidor rodando na porta http://localhost:${PORT}/`);  
